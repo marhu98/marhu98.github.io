@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Why paper signatures should never be used again</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<link rel=icon type=image/png href="../../pix/head.png">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Why paper signatures should never be used again</h1>
+</header>
+
+
+<nav>
+     
+     <ul>
+          <a href="../../public/blog/index.html">
+                 <li class='underline-animation'>Home
+           </li></a>
+          <a href="../../public/blog/index.html">
+                 <li class='underline-animation'>Blog
+           </li></a>
+          <a href="https://github.com/marhu98">
+                 <li class='underline-animation'>Software
+<img src="../../pix/git.svg"alt=git.svg/>           </li></a>
+          <a href="../../public/contact/index.html">
+                 <li class='underline-animation'>Contact
+           </li></a>
+          <a href="../../public/rants/index.html">
+                 <li class='underline-animation'>Rants
+           </li></a>
+          <a href="../../publicrss.xml">
+                 <li class='underline-animation'>RSS
+<img src="../../pix/rss.svg"alt=rss.svg/>           </li></a>
+    </ul>
+</nav>
+
+
+
+<main>
+<h1 id="signatures-the-old-way-and-the-new-way.">Signatures: The old way and the new way.</h1>
+<p>A signature in a piece of paper is an age old proof of identity. Even today, even though it’s unreliable and easily forgeable. Yet in paper signature we trust. There have been some mild attemps to change this. For example the spanish government made compulsory the adoption of a new form of id. An electronid id (called dnie <a href="https://www.dnielectronico.es/PortalDNIe/">see here</a>).</p>
+<p>If you are curious about the details of how digital signature works check out my post on: (here)[https://To-do]</p>
+<h2 id="the-problem-with-the-old-way.">The problem with the old way.</h2>
+<p>The main problem with paper signatures is easy to guess: They are not really trustworthy. For example: They are easy to duplicate. Let’ say that to have a document with someone’s signature on it. Take your phone, scan it and glue it any pdf you want. Voilà!</p>
+<p>Some people remedy this by adding: Me, name surname with id bla bla… I authorise this or another. Hopefully, I don’t need to tell you why this is futile.</p>
+<p>Since paper signature can be easily forged, your signature on a piece of paper doesn’t mean anything, you can always argue somebody sign for you and it’s very hard to prove otherwise.</p>
+<p>Another problem: You sign a contract, then you find out one of the clause has been modified. But of course, you can’t prove that. That’s one reason we need notaries. A third party that ensures trust, that’s very inefficient and can be removed with digital signatures.</p>
+<p>On the contrary, digital signatures can’t be forged, and they are attached to the content of the file they signed. Meaning that if you modified a signed file, an external verifier can check that the signature does not check out.</p>
+<h2 id="reinventing-the-wheel.">Reinventing the wheel.</h2>
+<p>My grudge with dnie is that is it hard to use: You need to buy a special reader, install a proprietary software and get a new certificate every two years.</p>
+<p>However, once you have it set up you can sign (and encrypt) documents. If your electronic signature appears on a document, it means you signed it, or someone stole your id. As of today (September, 2021) this signature is considered to be unbreakable.</p>
+<p><strong>Unless</strong>, the cryptographic algorithms used are not strong enough. And how would you know, do you ask? Well, you don’t that’s the problem. Because, the implementation details are hidden, and the software is closed source.</p>
+<p>This is mildly infuriating once you consider the following two factors: - There already existed free and open software and hardware that solved this: GnuPG.</p>
+<ul class="incremental">
+<li><p>Because the government had to redo something that was already well done and free, is cost the hard-working spanish tax payers a lot of money.</p></li>
+<li><p>You don’t actually need speciallised hardware, you could store it in your computer (less safe) or on a usb (less safe but better) or you could build one for $2 (gnuk)[https://salsa.debian.org/gnuk-team/gnuk/gnuk] (best).</p></li>
+<li><p>Id card should allow for password protection, which it doesn’t, but GnuPG does.</p></li>
+<li><p>GnuPG allows the users to choose how secure they want their key to be. It has often been found that when left to the provider, they choose security that was too weak.</p></li>
+</ul>
+<p>Of course, that was done pre 2008, aka, the good days, where no-one cared about wasting public money.</p>
+<p>Not all are <strong>bad things</strong>, there is a good side: Doing this prevents so called man in the middle attack (or MITM for short). Because in this particular instance the government works as a <strong>Certificate authority</strong>. What this means is a guarantor that you are who you say you are. I will give more details at the end of the post if you are curious.</p>
+<h2 id="the-better-way.">The better way.</h2>
+<p>One better way to this is one where you can choose how secure you are going to be. First you have to choose which signing algorithm you are going to use. There are many algorithms to choose from. The two main options are RSA and ECC. ECC is more modern and recomended, although RSA is still considered secure. In ECC there are several options as well, but don’t worry about it now.</p>
+<p>The first thing that you are goint to need is a key. Roughly, this is the way it works. You generate two keys (a key pair!). One is known as the public key and the private key.</p>
+<p>The names are very descriptive, you give your public key to whomever they ask, and you keep your private key safe and encrypted with a passphrase. How do you think of a secure passphrase? So glad you asked, check here: (here)[https://github.com/marhu98/rdice] or (here for and external link)[https://www.eff.org/dice]</p>
+</main>
+</body>
+
+<footer>
+    Inspired by: <a href="https://lukesmith.xyz">Luke Smith's Webpage</a>
+    Everything available under
+    <a href="LICENSE">
+    GPL 3.0 license.</a>
+</footer>
+</html>

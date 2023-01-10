@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Counting is easy. Until it’s not.</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<link rel=icon type=image/png href="../../pix/head.png">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Counting is easy. Until it’s not.</h1>
+</header>
+
+
+<nav>
+    <ul>
+        <a href="../../index.html">
+            <li class="underline-animation"> Home</li>
+        </a>
+        <div class="dropdown">
+            <a class="dropa" href="../../public/blog/index.html">
+            <li> Blog</li></a>
+            <div class="dropdown-content">
+                <a href="../../public/blog/math/index.html"> Math</a>
+                <a href="../../public/blog/chess/index.html"> Chess</a>
+                <a href="../../public/blog/math/liesofhighschool/index.html"> Lies of high school</a>
+            </div>
+        </div>
+        <a href="https://github.com/marhu98">
+            <li><img src="../../pix/git.svg" alt="Github logo"> Software</li></a>
+        <a href="../../public/contact/contact.html">
+            <li> Contact</li></a>
+        <a href="../../pulic/rants/index.html">
+            <li> Rants</li></a>
+        <a href="../../rss.xml">
+            <li><img src="../../pix/rss.svg" alt="rss logo"> RSS</li></a>
+    </ul>
+</nav>
+
+
+
+<main>
+<h1 id="counting-is-easy.-right">Counting is easy. Right?</h1>
+<p>On some previous post I talked about cardinals, now I want to talk about ordinals. Which in my opinion are a lot more fun.</p>
+<p>One of the first experiences of little children with school is counting. The learn some numbers, how to count up to 10, then up to 100, then how to potentially count up to any number. One tragedy of life is that there are always as many numbers left to count as when you started. An owe to the futility of life.</p>
+<p>However, suppose that by some magic stroke of luck, you could actually count beyond infinity. The great mathematician Georg Cantor stumbled upon this problem when doing his PhD thesis. He realised that counting beyond infinity could make sense. I will talk about what his problem was at the end. (Here insert reference to Cantor part).</p>
+<p>Supposse you can count <span class="math inline">1, 2, 3, …, ∞</span>! And then <span class="math inline">∞ + 1</span> and then <span class="math inline">∞ + 2</span> and so forth. Soon you realise you could count <span class="math inline">∞ + ∞</span> and <span class="math inline">∞ + ∞ + ∞</span> and <span class="math inline">∞ + ∞ + ∞ + ∞ + …</span>.</p>
+<p>So you get <span class="math inline">∞ × ∞</span>. And you stop to ponder how smart you are. But then you realise, it hits you like a train, how about: <span class="math inline">∞ × ∞ + 1</span>. Now we are messed up, of course, we can consider <span class="math inline">∞ × ∞ × ∞ = ∞<sup>3</sup></span> and then <span class="math inline">∞<sup>∞</sup></span>. And then <span class="math inline">∞<sup>∞<sup>∞<sup>⋯</sup></sup></sup></span>.</p>
+<p>And then your head might be blown. For simplicity, we mathematicians call this <span class="math inline">∞</span> <span class="math inline"><em>ω</em></span> or <span class="math inline"><em>ω</em><sub>0</sub></span> (as we discussed there are many infinities).</p>
+<p>Then last number, the ones with <span class="math inline"><em>ω</em></span> to the <span class="math inline"><em>ω</em></span>, <span class="math inline"><em>ω</em></span>- many times, we call <span class="math inline"><em>ε</em><sub>0</sub></span>.</p>
+<p>And all this counting “numbers”, we call them ordinals. Notice, all this ordinal have the same cardinal: <span class="math inline">ℵ<sub>0</sub></span>. But they are different, because they are ordered, in a very specific way. There is always one that comes after another.</p>
+<p>Not necesarilly the other way around. Who comes before <span class="math inline"><em>ω</em></span>? No-one. Who comes before <span class="math inline"><em>ε</em><sub>0</sub></span>, no-one. But there is always that comes after. Weird!</p>
+<p><span class="math inline"><em>ε</em><sub>0</sub></span> is weird for another reason, it’s the first fixed point of exponentiation. What do I mean? Think about it for a second <span class="math inline"><em>ε</em><sub>0</sub><sup><em>ω</em></sup> = <em>ε</em><sub>0</sub></span>. Another reason is, it might look like <span class="math inline"><em>ε</em><sub>0</sub></span> is a lot further away from <span class="math inline">0</span> that <span class="math inline"><em>ω</em></span>. And you might be correct, in some sense. However, there are as many numbers between <span class="math inline">0</span> and <span class="math inline"><em>ω</em></span> and between <span class="math inline">0</span> and <span class="math inline"><em>ϵ</em><sub>0</sub></span>. How many? <span class="math inline">ℵ<sub>0</sub></span> of them. Bullocks!</p>
+<h2 id="well-ordering.">Well-ordering.</h2>
+<p>Before I mentioned that there is some ordinals are ordered in a very special way, but I did not say what made this ordering so special. In mathematics jargo we say they are well ordered, but what does that actually mean? It means the follwing: Suppose I have a question in my head, for example: What is smallest ordinal which is not finite? Then I have an answer: <span class="math inline"><em>ω</em><sub>0</sub></span>.</p>
+<p>To recap, if I ask a question of the form: What is the smallest ordinal that has this property? And you can find at least one that has the property, then you can find the smallest one. This might seems obvious at first, but it’s very special. For example, what is the smallest rational <span class="math inline"><em>x</em></span>, so that <span class="math inline"><em>x</em><sup>2</sup> &gt; 2</span>?. There is none. What is the smallest real number in the interval <span class="math inline">(0, 1)</span>? There is none. So it’s not so easy to be well-ordered.</p>
+<p>One natural question you might be asking youself is if every set can be well ordered somehow. Can we rearange the reals so that the are well ordered? Well… We will very likely never know. The day we know, is the day mathematics will have to very reinvented. But that is a topic for another day. It’s what it’s called undecidable, it can’t be shown to be true and it can’t be shown to be false. You can take it as an axiom, you can be in the religion that believes that every set can be well-ordered or you can be on the other side. Each one has it’s perks.</p>
+<p>One of my favourite line of argument goes like this: There are no boring natural numbers, for if there were, I could ask: What is the smallest boring natural number? Whatever number it, let’s call it <span class="math inline"><em>n</em></span>, this number has an interesting property: Every number below it is interesting. That must make it interesting! So there are no boring numbers. You can do the exact same argument for ordinals. The savy among you (or people that already know this) might have notices there is some fihsy business. Indeed, I did not say precisely what boring was. So I could mold it to mean whatever I wanted. Lesson is: <em>When arguing always make sure that the person that you are arguing with has the same defintions as you do!</em> Otherwise you might disagree on what you mean by boring (or feminism or fascists, can you thinks of a line of argumentation that proves every natural number is fascist? Sure you can, if fascists is defined loosely enough. Of course the question is non-sensical, numbers don’t have opinions!).</p>
+<p>At the start we mentioned <span class="math inline"><em>ε</em><sub>0</sub><sup><em>ω</em></sup> = <em>ε</em><sub>0</sub></span>, we can ask the question: What is the smallest number, that is greater than <span class="math inline"><em>ε</em><sub>0</sub></span> that has the same property? The answer <span class="math inline"><em>ε</em><sub>1</sub></span>, and the next <span class="math inline"><em>ε</em><sub>2</sub></span>, and then you can consider <span class="math inline"><em>ε</em><sub><em>ε</em><sub>0</sub></sub></span> and of course: <span class="math inline"><em>ε</em><sub><em>ε</em><sub><em>ω</em></sub></sub></span> and so forth, you get the idea. There are as many <span class="math inline"><em>ε</em></span>’s as there any countable ordinals. Crazy, but by this point it should not surprise you too much.</p>
+<p>We can keep asking questions: What is the smallest ordinal that is not countable? The answer <span class="math inline"><em>ω</em><sub>1</sub></span>. What is the cardinal of <span class="math inline"><em>ω</em><sub>1</sub></span>? <span class="math inline">ℵ<sub>1</sub></span>. Easy. We can repeat this process as much as we want, until we get to <span class="math inline"><em>ω</em><sub><em>ϵ</em><sub>0</sub></sub></span> or even <span class="math inline"><em>ω</em><sub><em>ω</em><sub>1</sub></sub></span> and so forth.</p>
+<p>There are so many ordinals there aren’t even an infinity of them, there are more. So many it makes no sense to ask how big they are. Mathematics is not ready to understand that question.</p>
+<h2 id="super-geeky-math-section.">Super Geeky Math Section.</h2>
+<p>From this point on we get into math which is very interesting but a harder for the uninitiated. Go see what you can understand! But don’t we dissapointed if your head hurts.</p>
+<h3 id="cantor-problem.">Cantor problem.</h3>
+<p>Ordinals might seem like they are purely abstract mathematical object with no connection to the real world. After all, counting past infinty is impossible anyways. However, when Cantor stumbles upon them he was handling a very applied problem, he was working with trigonometric series (one example of those would be the super famous Fourier series).</p>
+<p>He was wondering, when two of these sequences are equal, and then realised that he had to look into the accumulation of sets. What is the accumulation of a set? The accumulation of a set if the points of the set which are not isolated. Okay, what is an isolated point in a set? It’s a point, that if you take a distance small enough, <span class="math inline"><em>ε</em></span>, then there is no other point in the set that is <span class="math inline"><em>ε</em></span>-point to the original point.</p>
+<p>Okay, examples are great for clarification. For example, finite set have an empty accumulation: <span class="math inline">{<em>x</em><sub>1</sub>, …, <em>x</em><sub><em>n</em></sub>}′ = ∅</span>. (We denote the accumulation of a set with a ’). Another example, is the set: <span class="math display">{0} ∪ {1/<em>n</em> : <em>n</em> ∈ ℕ<sub>+</sub>}</span></p>
+<p>What is it’s accumulation? It’s the set <span class="math inline">{0}</span>. We also have so-called perfect sets, sets which are their own accumulation, for example <span class="math inline">[0, 1</span> or the (Cantor)[https://en.wikipedia.org/wiki/Cantor_set] set are perfect sets.</p>
+<p>This is what Cantor noticed, if we define <span class="math inline"><em>A</em><sup>(<em>n</em>)</sup></span> to be the accumulation of <span class="math inline"><em>A</em></span> taken <span class="math inline"><em>n</em></span> times, then we can always find a subset of the real numbers <span class="math inline"><em>A</em></span>, so that <span class="math inline"><em>A</em><sup>(<em>n</em>)</sup> = ∅</span> but <span class="math inline"><em>A</em><sup>(<em>n</em> − 1)</sup> ≠ ∅</span>. In fact, this is not difficult, as in the previous example, we took a discrete set, namely, <span class="math inline">{0}</span> whose accumulation is empty and we expand it by taking fractions of the form <span class="math inline">1/<em>n</em></span>. Then we can repeat this procedure, we attach small enough variations of every point to build a set whose accumulation takes one step longer to go to the empty set.</p>
+<p>One extra challenge, we define <span class="math inline"><em>A</em><sup>(<em>ω</em>)</sup> = ∩<sub><em>n</em></sub><em>A</em><sup>(<em>n</em>)</sup></span>, then we can build a set so that <span class="math inline"><em>A</em><sup><em>n</em></sup> ≠ ∅</span> for every <span class="math inline"><em>n</em></span>, but <span class="math inline"><em>A</em><sup>(<em>ω</em>)</sup> = ∅</span>. Then we keep pulling the thread, we find a set <span class="math inline"><em>A</em></span> so that <span class="math inline"><em>A</em><sup>(<em>ω</em>)</sup> ≠ ∅</span>, but <span class="math inline"><em>A</em><sup>(<em>ω</em> + 1)</sup> = ∅</span>.</p>
+<p>Now, out of the blue ordinals make sense, in fact you can play the previous game for every countable ordinal. Curiously, you can’t do the same for uncountable ordinales, once you get to <span class="math inline"><em>A</em><sup>(<em>ω</em><sub>1</sub>)</sup></span> it always stabilises. So this gives a motivation for ordinal numbers.</p>
+<h3 id="a-quirck-for-topologists.">A quirck for topologists.</h3>
+<p>Let’s consider the set <span class="math inline"><em>A</em><sub>1</sub> = {<em>α</em> ordinal  : <em>α</em> &lt; <em>ω</em><sub>1</sub>}</span>, typically mathematicians called this set the first uncounable ordinal set. (Again, we are not original with names). We consider <span class="math inline"><em>B</em><sub>1</sub> = <em>A</em><sub>1</sub> ∪ {<em>ω</em><sub>1</sub>}</span>.</p>
+<p>As a note, the way the ordinals are constructed, <span class="math inline"><em>A</em><sub>1</sub> = <em>ω</em><sub>1</sub></span>, that is, every ordinal is a set, the set of all ordinals smaller than itself. For example, the number <span class="math inline">2</span> can be seen as <span class="math inline">2 = {0, 1}</span>. What a coincidence that <span class="math inline">2</span> is a set with <span class="math inline">2</span> elements. If you are wondering how we define <span class="math inline">0</span>. Well, what’s the only set with <span class="math inline">0</span> elements?</p>
+<p>Since <span class="math inline"><em>B</em><sub>1</sub></span> is ordered it has a natural topology, the order toplogy. That is the toplogy generated by the intervals: <span class="math display">(<em>α</em>, <em>β</em>) = {<em>γ</em> : <em>α</em> &lt; <em>γ</em> &lt; <em>β</em>}</span></p>
+<p>In topology there are three “usually” equivalent notions: Compactness, sequentially compact and limit-point compactness. It turns out compactness and sequentially compact are not related, meaning that having one doesn’t imply the other. However, finding counter examples is actually hard, in almost all spaces of interest, they are equivalent. You can check this out at the awesome page: (Pi-base)[https://topology.pi-base.org/spaces?q=~compact%20%2B%20Sequentially%20Compact].</p>
+<p><span class="math inline"><em>B</em><sub>1</sub></span> provides an example of a sequentailly compact space that is not compact. Seen that is not compact is very easy, simply consider the open covering: <span class="math display">{(0, <em>β</em>), <em>ω</em><sub>1</sub>}<sub><em>β</em> &lt; <em>B</em><sub>1</sub></sub></span></p>
+<p>Obviously, no finite subcovering can be found. Now, let’s show that <span class="math inline"><em>B</em><sub>1</sub></span> is sequentially compact. (I came with this proof, but I’m sure there are shorter ones).</p>
+<p>First, there are two elementary facts that easily combine to give the answer:</p>
+<ul class="incremental">
+<li><p><strong>Fact 1</strong>: In a well ordered set, such as <span class="math inline"><em>B</em><sub>1</sub></span>, there is no infinite descending sequence.</p></li>
+<li><p><strong>Fact 2</strong>: In the order topology, every bounded monotonous sequence converges to it’s supremum.</p></li>
+</ul>
+<p>Proof of this facts is traditionally left as an exercise, and so it shall be in honour of mathematical tradition.</p>
+<p>Let’s consider a sequence <span class="math inline">(<em>α</em>)<sub><em>n</em></sub></span>, we want to find a convergent subsequence. Now simply observe that <span class="math inline">(<em>α</em>)<sub><em>n</em></sub></span> either has constant subsequence, or it doesn’t. If it does, then pick that as a convergent subsequence, if it doesn’t given any <span class="math inline"><em>α</em><sub><em>n</em></sub></span> you can always find another <span class="math inline"><em>α</em><sub><em>m</em></sub></span> so that <span class="math inline"><em>α</em><sub><em>m</em></sub> ≥ <em>α</em><sub><em>n</em></sub></span>, otherwise we are contradicting fact 1. And so we can turn <span class="math inline">(<em>α</em>)<sub><em>n</em></sub></span> into a monotonous sequence, and by fact 2 we are done.</p>
+</main>
+</body>
+
+<footer>
+    Inspired by: <a href="https://lukesmith.xyz">Luke Smith's Webpage</a>
+    Everything available under
+    <a href="LICENSE">
+    GPL 3.0 license.</a>
+</footer>
+</html>

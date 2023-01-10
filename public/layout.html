@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-05-23 Mon 17:03 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Presentation Monday</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Mario" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<style>*{font-family: serif !important}</style>
+<style>.algorithm{border-style: double; margin:0px;}</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Presentation Monday</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgda9da64">1. MPCitH</a>
+<ul>
+<li><a href="#orgf5a7195">1.1. MPCitH: Original idea.</a></li>
+<li><a href="#orgf3d34b2">1.2. Ligero's choice</a></li>
+<li><a href="#orga61e508">1.3. Better solutions: Using correlated randomness.</a></li>
+<li><a href="#org7d43a5b">1.4. KKW</a></li>
+<li><a href="#orgf793a2a">1.5. KKW A better picture.</a></li>
+<li><a href="#org46fdb2d">1.6. KKW Part 2</a></li>
+<li><a href="#orgb505869">1.7. BN</a></li>
+<li><a href="#org56ad21b">1.8. BN Part 2</a></li>
+<li><a href="#org25efd52">1.9. BN Part 3</a></li>
+</ul>
+</li>
+<li><a href="#org71f8694">2. KKW and BN proofs.</a>
+<ul>
+<li><a href="#org504e47b">2.1. <span class="todo TODO">TODO</span> KKW proof.</a></li>
+<li><a href="#org5214bb9">2.2. <span class="todo TODO">TODO</span> More general KKW proof.</a></li>
+<li><a href="#org60e1481">2.3. <span class="todo TODO">TODO</span> Sacrificing proof.</a></li>
+</ul>
+</li>
+<li><a href="#org956b8dc">3. Optimizations that are already known.</a>
+<ul>
+<li><a href="#org35e86b2">3.1. <span class="todo TODO">TODO</span> Better solutions for AES.</a></li>
+<li><a href="#org2c1fe17">3.2. Sacrificing: Banquet</a></li>
+<li><a href="#orgb18966b">3.3. Sacrificing: Banquet. Part 2.</a></li>
+<li><a href="#orgcf31d20">3.4. Sacrificing: Banquet. Part 3.</a></li>
+<li><a href="#orgfb0a82d">3.5. Sacrificing: Banquet. Part 4. Some final remarks.</a></li>
+<li><a href="#orga3d42a7">3.6. <span class="todo TODO">TODO</span> Banquet proof</a></li>
+<li><a href="#org07b6484">3.7. Banquet cost.</a></li>
+<li><a href="#orge71f014">3.8. <b><b>Banquet++</b></b>: Better polynomial checking.</a></li>
+<li><a href="#org0b22dfe">3.9. Optimizations that are already known.</a></li>
+<li><a href="#org7005ec3">3.10. Some delicate stuff.</a></li>
+</ul>
+</li>
+<li><a href="#org805c031">4. <span class="todo TODO">TODO</span> Unexplored options</a>
+<ul>
+<li><a href="#orga2cfc9b">4.1. Unexplored options</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgda9da64" class="outline-2">
+<h2 id="orgda9da64"><span class="section-number-2">1</span> MPCitH</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgf5a7195" class="outline-3">
+<h3 id="orgf5a7195"><span class="section-number-3">1.1</span> MPCitH: Original idea.</h3>
+<div class="outline-text-3" id="text-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Input</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">witness w</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Public key x,</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Public function f</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Protocol \(\Pi\) that is \(t\) -private.</td>
+</tr>
+</tbody>
+</table>
+
+<ol class="org-ol">
+<li>Choose \(w_i \stackrel{unif}{\leftarrow} \{0,1\}^m\) so that \(\sum w_i=w\).</li>
+<li>Prover runs the protocol \(\Pi(f,x,w_1,\ldots,w_n)\).</li>
+<li>And commits to the "views of the parties".</li>
+<li>Verifier chooses \(T\subset \{1,\ldots,n\}\), \(\vert T\vert =t\).</li>
+<li>Prover opens the views of parties \(t\in T\).</li>
+<li>Verifier checks that the opened views are consistent with their commits and that they output correct.</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgf3d34b2" class="outline-3">
+<h3 id="orgf3d34b2"><span class="section-number-3">1.2</span> Ligero's choice</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+There is an extra party I which can't be opened,
+but has certain special robustness properties.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Input</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Witness w</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Public key x,</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Public function f</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Protocol \(\Pi\) that is \(t\) -private.</td>
+</tr>
+</tbody>
+</table>
+
+<ol class="org-ol">
+<li>Set \(w_i \leftarrow\{0,1\}^m\) so that \(\sum w_i=w\).</li>
+<li>Prover runs the beginning of the protocol \(\Pi(f,x,w_1,\ldots,w_n)\).</li>
+<li>And commits to the "views of the parties".</li>
+<li>Prover and verifier invoke a coin-flipping oracle and get a random challenge r.</li>
+<li>Prover finishes to run the protocol, commits to the views. And opens a subset challenged by the verifier.</li>
+<li>Verifier verifies.</li>
+</ol>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+</table>
+
+<ul class="org-ul">
+<li><b><b>Gain?</b></b>: No idea. Assymptotically better somehow.</li>
+<li>Assymptotics not good enough for signature. <b><b>Has constant overhead!</b></b>. (Communications= 0(1)+extra(\(\kappa\)).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga61e508" class="outline-3">
+<h3 id="orga61e508"><span class="section-number-3">1.3</span> Better solutions: Using correlated randomness.</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><b><b>Goal</b></b>: Use correlated randomness.</li>
+<li>Wishlist: Better MPC protocols compared to BGW.
+<ul class="org-ul">
+<li>SPDZ</li>
+<li><code>Beaver triples</code>:
+<b><b>Objective</b></b>: Known \((x_i,y_i)\) find \((z_i)\) so that:
+\(\sum z_i=(\sum x_i)(\sum y_i)\), without sharing \(x\) or \(y\).
+Given triples \((a,b,c)\) and a sharing \((a_i,b_i,c_i)\) then, choose \(\varepsilon\) at random and do:
+<ul class="org-ul">
+<li>Compute \(\alpha_i=x_i-a_i\) and \(\beta_i=y_i-b_i\)</li>
+<li>Open \(\alpha\) and \(\beta\), i.e
+\(\alpha=\sum \alpha_i\)
+\(\beta=\sum \beta_i\)</li>
+<li>Compute:
+\(z_i=c_i-\alpha\cdot b - \beta \cdot a_i + \alpha \cdot \beta\)</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7d43a5b" class="outline-3">
+<h3 id="org7d43a5b"><span class="section-number-3">1.4</span> KKW</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+<b><b>Idea</b></b>: Randomness is verified for some parties before the execution of \(\Pi_f\), and the verifier trusts that
+if the opened parties are honest, so are the unopened ones.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">1. Preprocessing phase</td>
+</tr>
+
+<tr>
+<td class="org-left">2. Generate \(M\cdot (\text{number of multiplication gates})\) random triples \((x_i,y_i,z_i)_{i=0}^N\).</td>
+</tr>
+
+<tr>
+<td class="org-left">3. Verifier asks to see the randomness assigned to \(M-\tau\) parties. Verifies that the triples are correct.</td>
+</tr>
+
+<tr>
+<td class="org-left">4. Execute IKOS algorithm on \(\tau\) unopened parties.</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Parameters:
+<ol class="org-ol">
+<li>N: Number of parties.</li>
+<li>M: Number of preprocessing rounds.</li>
+<li>\(\tau\) cut parameter: Determines how many rounds of protocol will be executed in the end. To be chosen for optimal soundness.</li>
+</ol></li>
+<li>An obvious optimization:
+<ol class="org-ol">
+<li>Generate random triples from seed \(sd\), and correct \(z_n\) to correct value:
+The prover need only give the verifier \(sd_i\), which is the seed used by party \(i\).
+It can be generated by \(sd_i=H(sd||i)\).</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf793a2a" class="outline-3">
+<h3 id="orgf793a2a"><span class="section-number-3">1.5</span> KKW A better picture.</h3>
+<div class="outline-text-3" id="text-1-5">
+\begin{tikzpicture}
+\node {$h_\Gamma$}
+child {node {$H$}
+	child {node {$h_1$} edge from parent[fill,thick]}
+	child {node {$\cdots$} edge from parent[draw=none] }
+	child {node {$h_M$} edge from parent[fill,thick]}
+edge from parent[dashed]
+};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\node {$h_\Omega}
+child {node {$H$}
+	child {node {$\Omega_1$} edge from parent[fill,thick]}
+	child {node {$\cdots$} edge from parent[draw=none] }
+	child {node {$\Omega_M$} edge from parent[fill,thick]}
+edge from parent[dashed]
+};
+\end{tikzpicture}
+</div>
+</div>
+
+<div id="outline-container-org46fdb2d" class="outline-3">
+<h3 id="org46fdb2d"><span class="section-number-3">1.6</span> KKW Part 2</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li><b><b>Soundness</b></b>:
+\[
+    \displaystyle{
+    \stackrel{min}{0\leq\tau\leq M}\;\; \stackrel{max}{0\leq c\leq M-\tau}\;\; \left\{
+    \frac{
+    \binom{M-c}{\tau}
+    }{
+    \binom{M}{\tau} N^{M-\tau-c}
+    }
+    \right\} 
+    }
+    \]</li>
+
+<li><b><b>Communication complexity</b></b>:</li>
+</ul>
+<p>
+\[
+    2\vert hash \vert +
+    \tau \vert sd \vert + \vert hash \vert + (M-\tau)(\vert com \vert) + 3\log_2{\vert\mathbb{F}\vert} +
+    \vert sd \vert + (M-\tau)(log N \vert sd \vert) + (M-\tau)(\vert com \vert +
+    (M-\tau)\log_2{\vert\mathbb{F}\vert}(3n_{mult}+
+    2n_{sq} + n_{in}+1)
+    \]
+</p>
+
+<ul class="org-ul">
+<li><b><b>Observation</b></b>: \(\vert hash \vert\geq 2\cdot \kappa\), where \(\kappa\) is the security level.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb505869" class="outline-3">
+<h3 id="orgb505869"><span class="section-number-3">1.7</span> BN</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+<b><b>Idea</b></b>: Randomness verified is during execution of the circuit instead of before.
+</p>
+<ol class="org-ol">
+<li><p>
+It is possible for the verifier to check that a multiplication has been done correctly by inserting some randomness.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">\(\sum z_i=(\sum x_i)(\sum y_i)\), without sharing \(x\) or \(y\).</td>
+</tr>
+
+<tr>
+<td class="org-left">Given triples \((a,b,c)\) and a sharing \((a_i,b_i,c_i)\) then</td>
+</tr>
+
+<tr>
+<td class="org-left">choose \(\varepsilon\) at random and do:</td>
+</tr>
+
+<tr>
+<td class="org-left">1. Compute \(\alpha_i=\varepsilon x_i-a_i\) and \(\beta_i=y_i-b_i\)</td>
+</tr>
+
+<tr>
+<td class="org-left">2. Open \(\alpha\) and \(\beta\), i.e</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\alpha=\sum \alpha_i\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\beta=\sum \beta_i\)</td>
+</tr>
+
+<tr>
+<td class="org-left">3. Compute:</td>
+</tr>
+
+<tr>
+<td class="org-left">\(v_i=\varepsilon z_i -c_i-\alpha\cdot b + \beta \cdot a_i - \alpha \cdot \beta\)</td>
+</tr>
+
+<tr>
+<td class="org-left">4. Check that \(v=\sum v_i=0\).</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org56ad21b" class="outline-3">
+<h3 id="org56ad21b"><span class="section-number-3">1.8</span> BN Part 2</h3>
+<div class="outline-text-3" id="text-1-8">
+<ol class="org-ol">
+<li>BN algorithm:
+<ol class="org-ol">
+<li>Imperfect preprocessing:
+<ol class="org-ol">
+<li>Generate random triples. No inmediate challenge.</li>
+<li>Run the circuit and save the output value of each gate.</li>
+<li>Commit to the "state". That is: The seed used for each party, the correction bits and the output of each gate.
+<b><b>Important</b></b>: Prover sends one commit string overall.
+We call this commit \(h_\Gamma\).</li>
+</ol></li>
+<li>Challenge: The verifier chooses a random seed, used to generate the challenges.</li>
+<li>Prover computes challenges on all gates, commits to the result of each party and sends it to the verifier.
+We call this commit \(h_\pi\).</li>
+<li>Verifier chooses to all-but-one party per round.</li>
+<li>Prover sends the requested parties plus the complementary commits necessary to compute the hash tree.</li>
+<li>Verifier uses the data given by the verifier to compute the global hashes.</li>
+</ol></li>
+<li>Parameters:
+<ol class="org-ol">
+<li>N: Number of parties.</li>
+<li>M: Number of preprocessing rounds.</li>
+</ol></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org25efd52" class="outline-3">
+<h3 id="org25efd52"><span class="section-number-3">1.9</span> BN Part 3</h3>
+<div class="outline-text-3" id="text-1-9">
+<ol class="org-ol">
+<li><b><b>Soundness</b></b>:</li>
+</ol>
+<p>
+\[
+  \left(
+  \frac{2N+\vert\mathbb{F}\vert-2}{\vert\mathbb{F}\vert N}
+  \right)^M
+  \]
+</p>
+<ul class="org-ul">
+<li><b><b>Communication complexity</b></b>:</li>
+</ul>
+<p>
+$$
+  &vert; hash &vert; + 
+  &vert; hash &vert; + 
+  &vert; sd &vert; + 
+  M(&vert; sd &vert; + &vert; com &vert; + 4log<sub>2</sub>(&vert;\mathbb{F}&vert;)n<sub>mult</sub>
+</p>
+<ul class="org-ul">
+<li>3log<sub>2</sub>(&vert;\mathbb{F}&vert;)n<sub>sq</sub>+log<sub>2</sub>(&vert;\mathbb{F}&vert;)n<sub>in</sub> + 2log<sub>2</sub>(&vert;\mathbb{F}&vert;))   
+$$</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org71f8694" class="outline-2">
+<h2 id="org71f8694"><span class="section-number-2">2</span> KKW and BN proofs.</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org504e47b" class="outline-3">
+<h3 id="org504e47b"><span class="section-number-3">2.1</span> <span class="todo TODO">TODO</span> KKW proof.</h3>
+</div>
+<div id="outline-container-org5214bb9" class="outline-3">
+<h3 id="org5214bb9"><span class="section-number-3">2.2</span> <span class="todo TODO">TODO</span> More general KKW proof.</h3>
+</div>
+<div id="outline-container-org60e1481" class="outline-3">
+<h3 id="org60e1481"><span class="section-number-3">2.3</span> <span class="todo TODO">TODO</span> Sacrificing proof.</h3>
+</div>
+</div>
+<div id="outline-container-org956b8dc" class="outline-2">
+<h2 id="org956b8dc"><span class="section-number-2">3</span> Optimizations that are already known.</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org35e86b2" class="outline-3">
+<h3 id="org35e86b2"><span class="section-number-3">3.1</span> <span class="todo TODO">TODO</span> Better solutions for AES.</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li><code>Preprocessing</code>: BBQ, Rainier
+<ul class="org-ul">
+<li><p>
+<b><b>BBQ</b></b>
+</p>
+<ul class="org-ul">
+<li>It is possible to verify the result of an S-box in one operation:
+Let \((s_i)\in\mathbb{F}_{2^8}\) and random \((r_i)\in\mathbb{F}_{2^8}\):</li>
+<li>Use the Beaver triples technique to compute a sharing of \(s\cdot r\) and open it</li>
+<li>Compute \(s^{-1} \cdot r^{-1}\)
+<ul class="org-ul">
+<li>If conditionals are a <b><b>pain</b></b> in MPC, so we choose an input where all the S-boxes have \(\neq 0\) input.</li>
+<li>Almost negligible effect on Key size (costs about 2-4 bits of security).</li>
+</ul></li>
+<li>The parties compute their share of \(s^{-1}\) by:</li>
+</ul>
+<p>
+\(s^{-1} \cdot r^{-1} \cdot r_i\)
+</p></li>
+<li><b><b>Rain</b></b>: AES with larger S-box to reduce the number of rounds.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2c1fe17" class="outline-3">
+<h3 id="org2c1fe17"><span class="section-number-3">3.2</span> Sacrificing: Banquet</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>No need to compute the S-box, the prover gives the answer and a proof that it is correct.</li>
+<li>Instead of using a triple to calcutate the answer, sacrifices one to prove the provided answer was correct.
+<ul class="org-ul">
+<li>Let \(m\) be the number of S-boxes.</li>
+<li>Let \(s_1^{(i)},\ldots,s_m^{(i)}\) be the outup of the S-boxes and \(t_1^{(i)},\ldots,t_m^{(i)}\) be sharing of the inverses.</li>
+<li><b><b>Goal</b></b>: Verify that,
+\[
+      \left(\sum_j s_j^{(i)}\right)
+      \cdot
+      \left(\sum_j t_j^{(i)}\right)
+      = 1,\;\; \forall j\in [m]
+      \]</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb18966b" class="outline-3">
+<h3 id="orgb18966b"><span class="section-number-3">3.3</span> Sacrificing: Banquet. Part 2.</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>Let \(r_i\) be the challenges of the verifier.</li>
+<li>Let \(m\) be the number of S-boxes, (i.e 10?/party).
+<ul class="org-ul">
+<li>Choose \(m_1,m_2\) so that: \(m=m_1\cdot m_2\).</li>
+<li>Divide the vector \((s_1^{(i)},\ldots,s_m^{(i)})\) into \(m_2\) chunks of size \(m_1\).
+\[
+        s_k^{'(i)}=(r_1s_{1+(k-1)m_1},\ldots,
+        r_js_{m_1+(k-1)m_1}
+        )
+        \;\;\forall k\in [m_2]
+        \]</li>
+<li>Similar for \(t\).
+\[
+        t_k^{'(i)}=(t_{1+(k-1)m_1},\ldots,
+        t_{m_1+(k-1)m_1}
+        )
+        \;\;\forall k\in [m_2]
+        \]</li>
+<li><b><b>The point</b></b>:
+\[
+        \left\langle
+        s_k^{'(i)},
+        t_k^{'(i)}
+        \right\rangle
+        =\sum_{j\in [m_1]} r_j,\;\;\forall k \in [m_2]
+        \]</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcf31d20" class="outline-3">
+<h3 id="orgcf31d20"><span class="section-number-3">3.4</span> Sacrificing: Banquet. Part 3.</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Build polynomials, \(P_j\), \(S_j\) and \(T_j\) so that:
+\[
+      (S_{1}(k),\ldots,S_{m_2}(k))=s_k^{'(i)};\;
+      (T_{1}(k),\ldots,T_{m_2}(k))=t_k^{'(i)};\;
+      \]
+\(S_k(m_2)\;,T_k(m_2)\) to be chosen at random.
+\[
+      P=\sum_{j\in[m_1]} S_j T_j, \;\;
+      \forall k\in [m_2]
+      \]
+And \(S(l),T(l)\) are chosen at random. And \(P(l)=S(l)\cdot T(l)\).</li>
+<li>Lift \(P,S,T\) to a field \(\mathbb{F}_{2^\lambda}\) with \(\lambda\) to be chosen large enough.
+<ul class="org-ul">
+<li>Choosing \(\lambda\) is not free as \(dim (\mathbb{F}_{2^\lambda}/\mathbb{F}_{2})=\lambda\). So $&lambda;$-bits of information are needed per element in the field. (\(3\lambda\cdot (m+1)\) for the polies for example).</li>
+<li>Choose if \(R\in\mathbb{F}_{2^\lambda}-[m_2]\) at random. Check \(P(R)=S(R)\cdot T(R)\).</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfb0a82d" class="outline-3">
+<h3 id="orgfb0a82d"><span class="section-number-3">3.5</span> Sacrificing: Banquet. Part 4. Some final remarks.</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li><code>Observation</code>: We can't choose \(R\in[m_2]\) because at those points the equality is guaranteed to hold by construction.</li>
+<li><code>Observation</code>: Interpolation is linear, hence the parties can compute a share of \(S_j(R)\) without comunication.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga3d42a7" class="outline-3">
+<h3 id="orga3d42a7"><span class="section-number-3">3.6</span> <span class="todo TODO">TODO</span> Banquet proof</h3>
+</div>
+<div id="outline-container-org07b6484" class="outline-3">
+<h3 id="org07b6484"><span class="section-number-3">3.7</span> Banquet cost.</h3>
+<div class="outline-text-3" id="text-3-7">
+<ul class="org-ul">
+<li><b><b>Soundness</b></b>: \(2^{-8\lambda}+\frac{2\cdot m_2}{2^{8\lambda}-m_2}\).</li>
+<li>Complexity:
+\(3\kappa + \tau \cdot \left(
+       4\kappa+\kappa \lceil \log_2(N) \rceil + \mathcal{M}(C)
+       \right)\)
+Where \(M(C)=5C\log_2\mathbb{F}\).</li>
+</ul>
+<ul class="org-ul">
+<li><b><b>Look like the same</b></b> but the properties of the zk proof are tricky.</li>
+<li>No need to reduce key space! Since inversion is not done in a multiparty way.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge71f014" class="outline-3">
+<h3 id="orge71f014"><span class="section-number-3">3.8</span> <b><b>Banquet++</b></b>: Better polynomial checking.</h3>
+<div class="outline-text-3" id="text-3-8">
+<ul class="org-ul">
+<li><p>
+<b><b>Complexity complexity</b></b>:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Protocol</th>
+<th scope="col" class="org-left">Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">BN</td>
+<td class="org-left">\(5C \log_2(\vert \mathbb{F}\vert)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">BN++ + basic optimization</td>
+<td class="org-left">\((2C + 1) \log_2(\vert \mathbb{F}\vert)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">BN++ + simple lifting</td>
+<td class="org-left">\(C \log_2(\vert \mathbb{F}\vert) + (C + 1) \log_2(\vert \mathbb{K}\vert)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">BN++ + RM\mathbb{F}E</td>
+<td class="org-left">\(\left(2 \left\lceil\frac{C}{k}\right\rceil+ 1\right) · \left(\log_2(\vert \mathbb{K}\vert)\right)\)</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0b22dfe" class="outline-3">
+<h3 id="org0b22dfe"><span class="section-number-3">3.9</span> Optimizations that are already known.</h3>
+<div class="outline-text-3" id="text-3-9">
+<ul class="org-ul">
+<li>Commits done in Merkle tree: Reveal takes \(\log{n}\) communication.</li>
+<li>Efficent generation of random triples.
+<ul class="org-ul">
+<li>Can be done from seed, the prover calculates correction bits and gives them to the last party.</li>
+<li>So communication is limited to 1 field element/gate + 1 seed (global).</li>
+<li>Same for any other randomness:
+<ul class="org-ul">
+<li><b><b>Consequence</b></b>: Randomness needs to be generated from a secure DRBG, otherwise the prover could choose the challenge.</li>
+<li>Switching between a fast generator and a secure one could give a little bit of speed.
+<ul class="org-ul">
+<li>No communication differenece, so who cares.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><b><b>Batching</b></b>.
+<ul class="org-ul">
+<li>Take random linear combinations of elments, i.e <b><b>amortized</b></b> proofs. Soundness is reduced, but communication is much better.</li>
+</ul></li>
+<li>Inserting output if evaluating a series of mult gates.</li>
+<li>Sampling on the fly. Mostly unexplored.</li>
+<li>Extendeded witness.
+<ul class="org-ul">
+<li>Prover adds elements to the witness that prove specific property.
+E.g: In BN: Extended witness contains a zk-proof that \(w\) is binary (i,e \(w=(w_1,\ldots,w_n),w_i\in\{0,1\}\)).</li>
+</ul></li>
+<li>No need to transmit \(\beta\) when sacrificing!</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7005ec3" class="outline-3">
+<h3 id="org7005ec3"><span class="section-number-3">3.10</span> Some delicate stuff.</h3>
+<div class="outline-text-3" id="text-3-10">
+<ul class="org-ul">
+<li>Since only one plaintext/ciphertext pair is revealed, less rounds are necessary to guarantee \(128\)
+bits of security.</li>
+<li><b><b>Rain</b></b>: Bigger S-box allows to work in larger fields.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org805c031" class="outline-2">
+<h2 id="org805c031"><span class="section-number-2">4</span> <span class="todo TODO">TODO</span> Unexplored options</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orga2cfc9b" class="outline-3">
+<h3 id="orga2cfc9b"><span class="section-number-3">4.1</span> Unexplored options</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>NIMPC: Probably really bad.</li>
+<li>Could the last party proof it's been honest?
+<ul class="org-ul">
+<li>Already some work on this.</li>
+<li>Paper of Nof proving that: If the sharing has some redundancy, then the one party has low chance of cheating.
+<b><b>Problem</b></b>: Currently it requires leaving 2 parties unopened.
+<b><b>What we need</b></b>: Some sort of magical homomorphic (1-time) MAC.</li>
+</ul></li>
+<li>AES-specific sacrificing.</li>
+<li>Multlivariate Schwartz-Zippel.</li>
+<li><b><b>Multiple verifiers!</b></b>.
+<ul class="org-ul">
+<li>Used in MPC for better performance, could be ported to MPCiTH for the non-interactive (our) case.</li>
+</ul></li>
+<li>Sampling on the fly.
+<ul class="org-ul">
+<li>Prover and verifier share randomness to generate a smaller circuit.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: \today</p>
+<p class="author">Author: Mario</p>
+<p class="date">Created: 2022-05-23 Mon 17:03</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

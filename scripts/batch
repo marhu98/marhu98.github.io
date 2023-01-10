@@ -1,0 +1,5 @@
+add post name=testier cat=test_tags=angry/security
+add cat name=test_cat index=test_dir dir=dir/subdir/
+update post tags=angry/security/privacy
+delete post name=test_post
+delete cat name=test_cat

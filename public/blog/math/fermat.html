@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Fermat’s little theorem</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<link rel=icon type=image/png href="../../pix/head.png">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Fermat’s little theorem</h1>
+</header>
+
+
+<nav>
+     
+     <ul>
+          <a href="../../public/blog/index.html">
+                 <li class='underline-animation'>Home
+           </li></a>
+          <a href="../../public/blog/index.html">
+                 <li class='underline-animation'>Blog
+           </li></a>
+          <a href="https://github.com/marhu98">
+                 <li class='underline-animation'>Software
+<img src="../../pix/git.svg"alt=git.svg/>           </li></a>
+          <a href="../../public/contact/index.html">
+                 <li class='underline-animation'>Contact
+           </li></a>
+          <a href="../../public/rants/index.html">
+                 <li class='underline-animation'>Rants
+           </li></a>
+          <a href="../../publicrss.xml">
+                 <li class='underline-animation'>RSS
+<img src="../../pix/rss.svg"alt=rss.svg/>           </li></a>
+    </ul>
+</nav>
+
+
+
+<main>
+<h1 id="fermats-little-theorem-how-a-gem-from-the-past-is-crucial-for-our-present.">Fermat’s little theorem: How a gem from the past is crucial for our present.</h1>
+<p>One famous theorem in mathematics is fermat’s little theorem, or the slighlty more general Euler’s theorem.</p>
+<p>One thing I really like about it is the following: At first the theorem seems inaccesible, however it’s proof is really evident, once you introduce group theory, and I mean the very basic of group theory. It could be considered a corollary of Lagrange’s theorem.</p>
+<p>Euler’s theorem is the basis of RSA encryption, which is helps to keep everything to you on the web private. <strong>Note</strong>: RSA is mostly not recommended anymore, cryptographers advise ECC (Elliptic curve cryptography), however, this also uses Euler’s theorem, so another win for the old mathematicians.</p>
+<p>It’s thanks to RSA, or more general asymetric encryption that prevents people from stealing your bank account detail or your facebook password, or other sensible information you might want to hide.</p>
+<h2 id="the-theorem">The theorem</h2>
+<p>So what does the theorem actually say? It states:</p>
+<p>Given a prime <strong>p</strong> and any number <span class="math inline"><em>a</em></span>, then the remainder of dividing <span class="math inline"><em>a</em><sup><em>p</em></sup></span> by <span class="math inline"><em>p</em></span> is exactly <span class="math inline"><em>a</em></span>.</p>
+<p>In mathematicians jargon we say ($a^p=a (mod p)).</p>
+<p>I give the proof at the end of the article as usual.</p>
+<h2 id="the-proof">The proof</h2>
+<p>As I said before, this is little more than Lagrange theorem. Consider the group <span class="math inline">ℤ<sub><em>n</em></sub><sup>*</sup></span>. And consider <span class="math inline"><em>a</em></span> to be a non-zero element of <span class="math inline">ℤ<sub><em>n</em></sub><sup>*</sup></span>.</p>
+<p>Then the cyclic group <span class="math inline"> &lt; <em>x</em>&gt;</span> has some size exactly the order of <span class="math inline"><em>x</em></span>. That is: <span class="math inline">$ord(x)=#&lt;x&gt;$</span>=o$. By Lagrange theorem, <span class="math inline"><em>o</em></span> divides <span class="math inline"><em>n</em> − 1</span>, so <span class="math inline"><em>n</em> − 1 = <em>k</em> * <em>o</em></span>. So:</p>
+<p><span class="math display"><em>x</em><sup>(</sup><em>n</em> − 1) = (<em>x</em><sup><em>o</em></sup>)<sup><em>k</em></sup> = 1<sup><em>k</em></sup> = 1(<em>m</em><em>o</em><em>d</em><em>n</em>)</span></p>
+<p>Multiplying both sides by x: <span class="math display"><em>x</em><sup><em>n</em></sup> = <em>x</em>(<em>m</em><em>o</em><em>d</em><em>n</em>)</span></p>
+<p>This last equality also holds in the case <span class="math inline"><em>x</em> = 0</span>, so the proof is complete.</p>
+</main>
+</body>
+
+<footer>
+    Inspired by: <a href="https://lukesmith.xyz">Luke Smith's Webpage</a>
+    Everything available under
+    <a href="LICENSE">
+    GPL 3.0 license.</a>
+</footer>
+</html>
