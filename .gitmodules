@@ -1,0 +1,6 @@
+[submodule "static/blog"]
+	path = static/blog
+	url = git@github.com:marhu98/journal.git
+[submodule "gitjournal"]
+	path = gitjournal
+	url = git@github.com:marhu98/gitjournal.git

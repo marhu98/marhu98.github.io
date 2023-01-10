@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>queues</title>
+  <style>
+    html {
+      line-height: 1.7;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 40em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin-top: 1.7em;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.7em;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1.7em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1.7em 0 1.7em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      font-style: italic;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      background-color: #f0f0f0;
+      font-size: 85%;
+      margin: 0;
+      padding: .2em .4em;
+    }
+    pre {
+      line-height: 1.5em;
+      padding: 1em;
+      background-color: #f0f0f0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin-top: 1.7em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+    }
+    th, td {
+      border-bottom: 1px solid lightgray;
+      padding: 1em 3em 1em 0;
+    }
+    header {
+      margin-bottom: 6em;
+      text-align: center;
+    }
+    nav a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<link rel=icon type=image/png href="pix/head.png">
+</head>
+<body>
+
+
+<nav>
+     
+     <ul>
+          <a href="public/blog/index.html">
+                 <li class='underline-animation'>Home
+           </li></a>
+          <a href="public/blog/index.html">
+                 <li class='underline-animation'>Blog
+           </li></a>
+          <a href="https://github.com/marhu98">
+                 <li class='underline-animation'>Software
+<img src="pix/git.svg"alt=git.svg/>           </li></a>
+          <a href="public/contact/index.html">
+                 <li class='underline-animation'>Contact
+           </li></a>
+          <a href="public/rants/index.html">
+                 <li class='underline-animation'>Rants
+           </li></a>
+          <a href="publicrss.xml">
+                 <li class='underline-animation'>RSS
+<img src="pix/rss.svg"alt=rss.svg/>           </li></a>
+    </ul>
+</nav>
+
+
+
+<main>
+<table>
+<tbody>
+<tr class="odd">
+<td>title: Why airline queues are incredibly stupid</td>
+</tr>
+<tr class="even">
+<td>spanish:false</td>
+</tr>
+<tr class="odd">
+<td>css:</td>
+</tr>
+<tr class="even">
+<td>- ../../style.css</td>
+</tr>
+<tr class="odd">
+<td>path: ../../</td>
+</tr>
+</tbody>
+</table>
+<h1 id="queues-airports">Queues: Airports</h1>
+<p>We all hate waiting in line. We don’t mind loosing time in other ways, such as watching youtube videos, solving sudokus or simply staring at the ceiling while resting in the sofa. However, waiting in line is just loathsome, most people handle it better than I do.</p>
+<p>But this is not a rant about queues in general, queues are necessary sometimes, yet they are sometimes abused. Case and point: Airlines. They make unnecessary long queues just so you pay to avoid them. They will make you queue even when there is no sense about it. I must say, I always found weird people that pay to get preferential boarding at airports, we all get at the destination at the same time. In the same way I never understood people that stand in the queue early. And then wait for half and hour until it even starts moving. Like if the plane was going to take off sooner or something.</p>
+<p>Anyway, that’s an example of a necessary queue. An unnecessary queue however, is the check-in queue. I usually make my check-in online, for the most part I always carry everything that I need on a backpack, so I can calmy go to the boarding gate and calmly wait until the last call to enter the plane. No queues (besides security). Paradise.</p>
+<p>With Covid, airlines now have to check your vaccination certificate, and if you’re traveling to some EU countries a QR formulary, <strong>It used to be te case</strong> a few months ago that you could submit those online and have them automatically validated. <strong>However</strong>, airlines have found out they can make an extra buck in the following way: - You no longer can validate your documents online, you need have them validated at check-in. - Charge people for preferential check-in.</p>
+<p><strong>Brilliant!</strong> Isn’t it? Except the check-in line moves painfully slow. And it does so <strong>on purpose</strong>. Think about it: If you have ever done a check-in in your life you’d notice that the clerk will spend an absurdly amount of time typing in the keyboard, doing something that should take 30 seconds. How hard is to scan a few things and weight a few pieces of luggage? Apparently a few minutes.</p>
+<p>Airlines could do it faster, they just don’t want to, because they make more money if people pay to skip the line. And of course, you’re going to put up if all of this because you alreday paid your ticket.</p>
+<p>Want to change things? There is really very little we can do, except complain and hope that they listen. <strong>Which they won’t</strong>.</p>
+<h2 id="queues-on-the-plane">Queues on the plane</h2>
+<p>Although not directly related to my rant, there is a similar case on why airlines use a suboptimal boarding method. That is, they use a boarding method that is purposefully slow. Why? So people pay for preferential boarding and so people pay more for seats on the front of the plane because those usually debord sooner.</p>
+<p>A much better exposition is given by <a href="https://www.youtube.com/user/CGPGrey">CGP Grey</a> in the following: <a href="https://www.youtube.com/watch?v=oAHbLRjF0vo&amp;t=470s">Video</a>.</p>
+</main>
+</body>
+
+<footer>
+    Inspired by: <a href="https://lukesmith.xyz">Luke Smith's Webpage</a>
+    Everything available under
+    <a href="LICENSE">
+    GPL 3.0 license.</a>
+</footer>
+</html>

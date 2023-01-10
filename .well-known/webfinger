@@ -1,0 +1,11 @@
+{
+	"subject": "acct:alice@marhuenda.in",
+
+	"links": [
+		{
+			"rel": "self",
+			"type": "application/activity+json",
+			"href": "https://marhuenda.in/actor"
+		}
+	]
+}

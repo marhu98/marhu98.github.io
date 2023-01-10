@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>The “undefined” Zero to the zero</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../../../style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<link rel=icon type=image/png href="../../../../pix/head.png">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">The “undefined” Zero to the zero</h1>
+</header>
+
+
+<nav>
+     
+     <ul>
+          <a href="../../../../public/blog/index.html">
+                 <li class='underline-animation'>Home
+           </li></a>
+          <a href="../../../../public/blog/index.html">
+                 <li class='underline-animation'>Blog
+           </li></a>
+          <a href="https://github.com/marhu98">
+                 <li class='underline-animation'>Software
+<img src="../../../../pix/git.svg"alt=git.svg/>           </li></a>
+          <a href="../../../../public/contact/index.html">
+                 <li class='underline-animation'>Contact
+           </li></a>
+          <a href="../../../../public/rants/index.html">
+                 <li class='underline-animation'>Rants
+           </li></a>
+          <a href="../../../../publicrss.xml">
+                 <li class='underline-animation'>RSS
+<img src="../../../../pix/rss.svg"alt=rss.svg/>           </li></a>
+    </ul>
+</nav>
+
+
+
+<main>
+<h1 id="zero-to-the-zero">Zero to the zero</h1>
+<p>High school teachers usually say that <span class="math inline">0<sup>0</sup></span> is undefined, and most people go on believing that is true. Even some professional mathematicians, however <span class="math inline">0<sup>0</sup></span> makes perfect sense and is perfectly defined. There is no ambiguity about what it’s value is. I hope the reader that the only possible value is <span class="math inline">0<sup>0</sup> = 1</span>.</p>
+<p>Look at it this way, what is <span class="math inline">2<sup>3</sup></span>. A number, sure, but what does it represent? If you imagine the number two as a set with two elements, let’s say <span class="math inline">2 = {<em>a</em>, <em>b</em>}</span> and <span class="math inline">3 = {<em>c</em>, <em>d</em>, <em>e</em>}</span></p>
+<p>Then, how many mapping are there from <span class="math inline">{<em>a</em>, <em>b</em>}</span> to <span class="math inline">{<em>c</em>, <em>d</em>, <em>e</em>}</span>. If you think about it, there are <span class="math inline">2</span> choices where to send <span class="math inline"><em>a</em></span>, and <span class="math inline">2</span> choices for <span class="math inline"><em>b</em></span>. So there are <span class="math inline">2<sup>3</sup> = 8</span> mappings.</p>
+<p>So exponentiation just correspong to counting how many functions are between two sets. But, what is a mapping? A mapping is an “assingment” from one set to another, but what does actually mean? There are several ways in which mathematicians may define the concept of a mapping. The most common one is to say that a mapping between two sets <span class="math inline"><em>f</em> : <em>A</em> → <em>B</em></span> is a subset of the cartesian product <span class="math inline"><em>A</em> × <em>B</em></span>. Remember that <span class="math inline"><em>A</em> × <em>B</em></span> is the set of all elements of the form <span class="math inline">(<em>a</em>, <em>b</em>)</span> where <span class="math inline"><em>a</em></span> is in <span class="math inline"><em>A</em></span> and <span class="math inline"><em>b</em></span> in <span class="math inline"><em>B</em></span>.</p>
+<p>Then, if <span class="math inline"><em>f</em></span> is a mapping, <span class="math inline">(<em>a</em>, <em>b</em>) ∈ <em>f</em></span> if <span class="math inline"><em>f</em>(<em>a</em>) = <em>b</em></span>. Furthermore, for a subset of <span class="math inline"><em>A</em> × <em>B</em></span> to we a mapping it needs to be “well defined”. That means, that if <span class="math inline">(<em>a</em>, <em>b</em>)</span> and <span class="math inline">(<em>a</em>, <em>c</em>)</span> are both in <span class="math inline"><em>f</em></span>, then <span class="math inline"><em>b</em> = <em>c</em></span>. Said differently, you can’t assign to different values to the same number.</p>
+<p>Okay, so what’s <span class="math inline">0<sup>0</sup></span>. Following with the previous logic, we think of <span class="math inline">0</span> as a set with zero elements, that is, the empty set. Then, whose <span class="math inline">0 × 0</span>? Well, how many pairs of the form <span class="math inline">(<em>a</em>, <em>b</em>), <em>a</em> ∈ ∅, <em>b</em> ∈ ∅</span>? Of course, there are none. So <span class="math inline">0 × 0 = 0</span>, no big surprise here.</p>
+<p>Now, here comes the twist. How many subsets does <span class="math inline">0</span> have? One! <span class="math inline">0</span> itself! It is definetely true that <span class="math inline">∅ ⊂ ∅</span>. And it turns out, this subset follows all the properties to be a mapping.</p>
+<p>And so, there is exactly one application between the empty set and the empty set, the empty set itself. That is: <span class="math inline">0<sup>0</sup> = 1</span>.</p>
+</main>
+</body>
+
+<footer>
+    Inspired by: <a href="https://lukesmith.xyz">Luke Smith's Webpage</a>
+    Everything available under
+    <a href="LICENSE">
+    GPL 3.0 license.</a>
+</footer>
+</html>
